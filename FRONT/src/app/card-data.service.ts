@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Card } from './card.model';
+
 
 @Injectable({
   providedIn: 'root'
@@ -7,13 +9,20 @@ export class CardDataService {
 
   constructor() { }
 
+  cardList: Card[] = [
+    new Card("Implantar HTTP", "fazer as requisições HTTP no código", "To Do:"),
+    new Card("Mudar Coluna", "Conseguir mudar os cards de coluna usando um subscribe", "Doing..."),
+    new Card("Mudar cor e botões", "mudar cor e botões dos cards conforme aperta os botões", "Done!")
+  ]
+
   getCardData() {
-    return [
-      {cardType: "Doing...", cardTitle: "fazer comida", cardDescription: "preparar comidinha gostosinha hoje."},
-      {cardType: "To Do:", cardTitle: "amanhã dormir", cardDescription: "tentar dormir amanhã"},
-      {cardType: "Done!", cardTitle: "aula Let's Code", cardDescription: "aulinha Let's Code gostosinha de noite"},
-      {cardType: "Doing...", cardTitle: "aula de git com Amanda", cardDescription: "Me explicando como fazer push no git"}
-    ]
+    return this.cardList;
+  }
+
+  setCardData( index: number, lista: string) {
+    this.cardList[index].lista = lista;
+
+
   }
 
 

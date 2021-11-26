@@ -16,6 +16,8 @@ import { ColumnComponent } from './column/column.component';
 import { HeaderComponent } from './header/header.component';
 import { CardComponent } from './column/card/card.component';
 import { CardDataService } from './card-data.service';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -36,7 +38,8 @@ import { CardDataService } from './card-data.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [CardDataService],
   bootstrap: [AppComponent]
