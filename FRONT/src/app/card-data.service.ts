@@ -21,9 +21,8 @@ export class CardDataService {
 
   setCardData( index: number, lista: string) {
     this.cardList[index].lista = lista;
-
-
   }
 
 
 }
+

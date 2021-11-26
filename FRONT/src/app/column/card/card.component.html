@@ -14,16 +14,16 @@
       <!-- não prescia estar em <a>, passar tudo pro img -->
 
       <!-- create Task Button -->
-        <a (click)="addTask()"><img height="35px" width="35px" alt="add-task"src="https://img.icons8.com/bubbles/100/000000/create-new.png"/></a>
+        <a style="cursor: pointer;" (click)="addTask()"><img height="35px" width="35px" alt="add-task"src="https://img.icons8.com/bubbles/100/000000/create-new.png"/></a>
 
          <!-- Rewind back task Button -->
-         <a *ngIf="lista === 'Done!' || lista === 'Doing...' " (click)="taskBack()"><img height="35px" width="35px" alt="advance-forward"src="https://img.icons8.com/bubbles/100/000000/long-arrow-left.png"/></a>
+         <a style="cursor: pointer;" *ngIf="lista === 'Done!' || lista === 'Doing...' " (click)="taskBack()"><img height="35px" width="35px" alt="advance-forward"src="https://img.icons8.com/bubbles/100/000000/long-arrow-left.png"/></a>
 
          <!-- Delete task button -->
-         <a *ngIf="lista != 'Create Task!' " (click)="deleteTask()"><img height="35px" width="35px" alt="advance-forward"src="https://img.icons8.com/bubbles/100/000000/delete-sign.png"/></a>
+         <a style="cursor: pointer;" *ngIf="lista != 'Create Task!' " (click)="deleteTask()"><img height="35px" width="35px" alt="advance-forward"src="https://img.icons8.com/bubbles/100/000000/delete-sign.png"/></a>
         
         <!-- advance Forward Button -->
-        <a *ngIf="lista === 'To Do:' || lista === 'Doing...'" (click)="taskForward()" ><img height="35px" width="35px" alt="advance-forward"src="https://img.icons8.com/bubbles/100/000000/right.png"/></a>
+        <a style="cursor: pointer;" *ngIf="lista === 'To Do:' || lista === 'Doing...'" (click)="taskForward()" ><img height="35px" width="35px" alt="advance-forward"src="https://img.icons8.com/bubbles/100/000000/right.png"/></a>
         
       
     </div>
