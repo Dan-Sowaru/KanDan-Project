@@ -1,0 +1,11 @@
+
+<!-- Two Way Binding com [(ngModel)] -->
+<!-- <input type="text" class="form-control" [(ngModel)]="username" > -->
+
+<!-- Interpolação de String com {{}}, vê la o username no TS-->
+<p>Username is {{username}}</p> 
+
+<!-- Binding de Propriedades com [] e Binding de Eventos com () -->
+<button class="btn btn-primary"[disabled]="!username" (click)="resetUsername()">reset Username</button>
+
+<p [ngStyle]="{backgroundColor: getColor()}" [ngClass]="{online: serverStatus === 'online'}">Server com if {{ serverId }} está {{ getServerStatus() }}</p>

@@ -1,0 +1,37 @@
+<p>servers works!</p>
+
+<!-- seletor de atributo <div app-servers> -->
+<!-- seletor de classe <div class="app-servers" -->
+
+    <button class="btn btn-primary"[disabled]="!allowNewServer" (click)="onCreateServer()">Adicionar servidor</button>
+
+    {{allowNewServer}}
+
+    <p [innerText]="allowNewServer"></p>
+
+    {{statusAdicacoServidor}}
+
+<!-- Diretiva ngIf ; chamando no else o ng-template criado la embaioxo-->
+    <p *ngIf="serverCreated; else noServer">Servidor foi criado</p>
+
+
+    <input type="text" class="form-control" (input)="onUpdateServerName($event)">
+
+    {{ serverName }}
+
+    <!-- $event captura o evento do input -->
+
+    <!-- <input type="test" class="form-control" [(ngModel)]="serverName"> -->
+
+
+    <!-- template de ng -->
+    <ng-template #noServer>
+        <p>Nenhum servidor foi criado</p>
+    </ng-template>
+
+
+
+    <!-- ngFor -->
+    <div *ngFor="let server of servers">
+        {{ server }}
+    </div>

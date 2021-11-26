@@ -1,0 +1,39 @@
+<div class="card mb-3" style="max-width: 100%;" [ngStyle]="{backgroundColor: getBackgroundColor()}">
+   
+    <div class="card-body">
+      <h5 class="card-title"> 
+        {{cardTitle}}  
+        
+      </h5>
+      <p class="card-text"> 
+        {{cardDescription}}       
+      </p>
+    </div>
+    <div class="card-footer ">
+      <!-- add [disabled] ou *ngIf -->
+      <!-- não prescia estar em <a>, passar tudo pro img -->
+
+      <!-- create Task Button -->
+        <a (click)="addTask()"><img height="35px" width="35px" alt="add-task"src="https://img.icons8.com/bubbles/100/000000/create-new.png"/></a>
+
+         <!-- Rewind back task Button -->
+         <a *ngIf="cardType === 'Done!' || cardType === 'Doing...' " (click)="taskBack()"><img height="35px" width="35px" alt="advance-forward"src="https://img.icons8.com/bubbles/100/000000/long-arrow-left.png"/></a>
+
+         <!-- Delete task button -->
+         <a *ngIf="cardType != 'Create Task!' " (click)="deleteTask()"><img height="35px" width="35px" alt="advance-forward"src="https://img.icons8.com/bubbles/100/000000/delete-sign.png"/></a>
+        
+        <!-- advance Forward Button -->
+        <a *ngIf="cardType === 'To Do:' || cardType === 'Doing...'" (click)="taskForward()" ><img height="35px" width="35px" alt="advance-forward"src="https://img.icons8.com/bubbles/100/000000/right.png"/></a>
+        
+      
+    </div>
+  </div>
+
+  <div>
+  
+  </div>
+
+ 
+
+
+

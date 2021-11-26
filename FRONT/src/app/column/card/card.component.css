@@ -1,0 +1,17 @@
+.card-footer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  border-color: #181d31;
+  color: #181d31;
+
+  /* gap: 10px 30px; */
+}
+
+.card {
+  flex-grow: 12;
+  text-align: center;
+  background-color: rgb(255, 234, 234);
+  border-color: #181d31;
+  color: #181d31;
+}

@@ -1,0 +1,27 @@
+
+<div class="container-fluid" id="cards-column">
+
+    <h2> {{ columnTitle }} </h2>
+
+    <div *ngIf="columnTitle === 'Create Task!'">
+          <app-card [cardType]="columnTitle"></app-card>
+    </div>
+
+    <div *ngFor="let card of cardData">
+        <div *ngIf="columnTitle === card.cardType">
+            <app-card [cardType]="card.cardType" [cardTitle]="card.cardTitle" [cardDescription]="card.cardDescription"></app-card>
+        </div>
+
+    </div>
+
+
+<!-- cardType, cardTitle, cardDescription -->
+    
+
+  
+
+   
+
+    
+
+</div>

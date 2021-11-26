@@ -1,0 +1,40 @@
+<app-header></app-header>
+<br>
+
+
+<div class="container" >
+    <div class="row" id="card-columns">
+        <div class="col-md-12 col-lg-3">
+           
+            <app-column [columnTitle]="'Create Task!'"></app-column>
+            
+            
+        </div>
+        <div class="col-md-12 col-lg-3">
+
+            <app-column [columnTitle]="'To Do:'"></app-column>
+
+
+        </div>
+        <div class="col-md-12 col-lg-3">
+
+            <app-column [columnTitle]="'Doing...'"></app-column>
+
+        </div>
+        <div class="col-md-12 col-lg-3">
+
+            <app-column [columnTitle]="'Done!'"></app-column>
+
+        </div>
+      
+    </div>
+  </div>
+
+  <img src="" alt="notebook">
+
+
+
+<router-outlet></router-outlet>
+
+
+
