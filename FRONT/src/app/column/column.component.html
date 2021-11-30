@@ -1,33 +1,39 @@
-
 <div class="container-fluid" id="cards-column">
+  <h2>{{ columnTitle }}</h2>
 
-    <h2> {{ columnTitle }} </h2>
+  <!------------------------ CREATE TASK -------------------->
 
-    <div *ngIf="columnTitle === 'Create Task!'">
-          <app-card [lista]="columnTitle"></app-card>
+  <div *ngIf="columnTitle === 'Create Task!'">
+    <div id="edit-mode" *ngIf="editMode">
+      <input class="form-control" type="text" placeholder="Title" />
+    </div>
+    <div class="card-body p-1 bg-secondary bg-opacity-75">
+      <textarea class="form-control" placeholder="Description">{{
+        description
+      }}</textarea>
     </div>
 
-    <div *ngFor="let card of cardData; let i = index">
-        <div *ngIf="columnTitle === card.lista">
-            <app-card 
-            [index]="i" 
-            [lista]="card.lista" 
-            [titulo]="card.titulo" 
-            [conteudo]="card.conteudo"
-           
-            ></app-card>
-        </div>
+    <!------------------------ CURRENT TASK CARDS -------------------->
+  </div>
+</div>
 
-    </div>
+<div *ngFor="let card of cardData; let i = index">
+  <div *ngIf="columnTitle === card.lista">
+    <app-card
+      [card]="card"
+      [id]="i"
+      [lista]="card.lista"
+      [titulo]="card.titulo"
+      [conteudo]="card.conteudo"
+    ></app-card>
+  </div>
+</div>
 
+<!-- 
+    [id]="i" 
+    [lista]="card.lista" 
+    [titulo]="card.titulo" 
+    [conteudo]="card.conteudo"
+    -->
 
 <!-- cardType, cardTitle, cardDescription -->
-    
-
-  
-
-   
-
-    
-
-</div>

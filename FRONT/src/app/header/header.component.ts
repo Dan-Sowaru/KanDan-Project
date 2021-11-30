@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CardDataService } from '../services/card-data.service';
 
 @Component({
   selector: 'app-header',
@@ -7,11 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  
-
-  constructor() { }
+  constructor(private cardDataService: CardDataService) { }
 
   ngOnInit(): void {
+  }
+
+  updateCardList() {
+   
+      this.cardDataService.getCardData().subscribe((data) => {
+        this.cardDataService.cardList = data;
+        console.log(this.cardDataService.cardList)
+      });
+    
   }
 
 }

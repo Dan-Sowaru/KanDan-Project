@@ -1,0 +1,25 @@
+.overlay-screen {
+  background-color: rgb(140, 129, 115);
+  color: rgb(29, 25, 13);
+  margin: 10%;
+  text-align: center;
+  /* text-align: justify; */
+  padding: 5%;
+  font-size: xx-small;
+  position: absolute;
+  top: 1%;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 1;
+}

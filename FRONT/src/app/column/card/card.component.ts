@@ -1,7 +1,7 @@
 import { createInput } from '@angular/compiler/src/core';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { CardDataService } from 'src/app/card-data.service';
-import { Card } from 'src/app/card.model';
+import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
+import { CardDataService } from 'src/app/services/card-data.service';
+import { Card } from 'src/app/models/card.model';
 
 @Component({
   selector: 'app-card',
@@ -15,50 +15,56 @@ export class CardComponent implements OnInit {
   @Output() evtFired = new EventEmitter<Card>();
 
   @Input() lista!: string;
-
   @Input() titulo!: string; // 
   @Input() conteudo!: string;
-  @Input() index!: number;
+  @Input() id!: number;
+  @Input() card!: Card;
+  editMode: boolean = false;
 
-  // @Input() tempCard!: Card;
+ 
 
-  dataToEmit: any = {
-    index: this.index,
-    titulo: this.titulo
-  }
+  // mudar pra emitir card completo
 
   
 
   ngOnInit(): void {
-    
+    console.log("card log", this.card.conteudo, this.card.lista)
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    this.card = this.card;
+    console.log("card changes", changes)
+    console.log("cards on card component", this.card)
   }
 
   addTask() {
 
+    //form
+
   }
 
   taskBack() {
-     this.lista = this.lista === 'Done!' ? 'Doing...' : 'To Do:' ;
-    this.cardDataService.setCardData(this.index, this.lista)
-     console.log(this.index)
+     this.card.lista = this.card.lista === 'Done!' ? 'Doing...' : 'To Do:' ;
+    this.cardDataService.setCardData(this.card.id, this.card.lista)
+     console.log(this.card.id)
     
   }
 
   deleteTask() {
-    this.lista = this.lista === 'Done!' ? 'Doing...' : 'To Do:' ;
+    this.card.lista = this.card.lista === 'Done!' ? 'Doing...' : 'To Do:' ;
 
   }
 
   taskForward() {
-    this.lista = this.lista === 'To Do:' ? 'Doing...' : 'Done!' ;
-    this.cardDataService.setCardData(this.index, this.lista)
+    this.card.lista = this.card.lista === 'To Do:' ? 'Doing...' : 'Done!' ;
+    this.cardDataService.setCardData(this.card.id, this.card.lista)
 
   }
 
 
 
   getBackgroundColor() {
-    switch (this.lista) {
+    switch (this.card.lista) {
       case "Create Task!": {
         return "white";
       }

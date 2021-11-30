@@ -1,0 +1,56 @@
+
+<div class="overlay">
+
+
+    <div>
+        <!-- <div class="d-flex modal"> -->
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header bg-success">
+                <h5 class="modal-title">Acesso de Usuário</h5>
+              </div>
+              <form [formGroup]="loginForm" action="">
+                <div class="modal-body">
+                  <div class="form-group p-2">
+                      <label for="">Login</label>
+                    <input
+                      class="form-control"
+                      placeholder="login"
+                      name="login"
+                      type="text"
+                      formControlName="login"
+      
+                    />
+                  </div>
+                  <div class="form-group p-2">
+                    <label for="">Senha</label>
+                    <input
+                      class="form-control"
+                      placeholder="senha"
+                      name="senha"
+                      type="password"
+                      formControlName="senha"
+      
+                      
+                    />
+                  </div>
+                </div>
+                <div class="modal-footer bg-success">
+                  <label style="text-align: center"*ngIf="blockedLogin">Login ou senha incorreta, a polícia foi acionada</label>
+                  <button
+                    type="submit"
+                    (click)="onSubmit()"
+                    class="btn btn-lg btn-dark btn-block"
+                  >
+                    OK
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+
+<!-- </div> -->

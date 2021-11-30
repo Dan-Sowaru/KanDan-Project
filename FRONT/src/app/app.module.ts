@@ -15,8 +15,11 @@ import { WarningAlertComponent } from './test-area/warning-alert/warning-alert.c
 import { ColumnComponent } from './column/column.component';
 import { HeaderComponent } from './header/header.component';
 import { CardComponent } from './column/card/card.component';
-import { CardDataService } from './card-data.service';
+import { CardDataService } from './services/card-data.service';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
+import { KanbanComponent } from './kanban/kanban.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -34,10 +37,13 @@ import { HttpClientModule } from '@angular/common/http';
     ColumnComponent,
     HeaderComponent,
     CardComponent,
+    LoginComponent,
+    KanbanComponent,
 
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
   ],
