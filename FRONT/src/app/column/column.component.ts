@@ -23,7 +23,6 @@ export class ColumnComponent implements OnInit, OnChanges {
    
       this.cardData = this.cardDataService.cardList;
       console.log("card service in column", this.cardDataService.cardList)
-      
       console.log("card list in column", this.cardData)
     
   }
